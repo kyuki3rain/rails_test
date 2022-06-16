@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   # {"id":1,"name":"You","crypted_password":"test","created_at":"2022-06-06T09:08:48.291Z","updated_at":"2022-06-06T09:08:48.291Z"}
 
   def show
-    user = User.find(params[:id].to_i).attributes
-    user.delete(:crypted_password)
+    user = User.find(params[:id].to_i)
     render json: user
   end
   # {"id":1,"name":"You","created_at":"2022-06-06T09:08:48.291Z","updated_at":"2022-06-06T09:08:48.291Z"}
